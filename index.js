@@ -3,13 +3,10 @@ const express = require('express');
 var cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
-const mainRoutes = require('./server/routes/mainRoutes');
 
 app.use(cors());
 
 const PORT = 4000;
-
-const CitiesCountries = require('./server/models/post');
 
 mongoose
   .connect(process.env.MONGO_CONNECT_STRING, {
@@ -23,23 +20,17 @@ mongoose
   })
   .catch((err) => console.error(err.message));
 
-//   middleware
+// middleware
+// leidzia req body gauti kaip json
 app.use(express.json());
 app.use(cors());
-app.use('/', mainRoutes);
 
-app.get('/addNewPlace', (req, res) => {
-  const newPost = new CitiesCountries({
-    city: 'Barcelona',
-    continent: 'Europe',
-    population: 5,
-    countryOrCity: 'City',
-  });
-  newPost
-    .save()
-    .then((result) => res.send(result))
-    .catch((err) => console.error(err.message));
-});
+// routes
+const allPosts = require('./server/routes/allPosts');
+const newPost = require('./server/routes/newPost');
+
+app.use('/', allPosts);
+app.use('/', newPost);
 
 app.get('/', (req, res) => {
   res.status(200).json(`Serveris veikia an port ${PORT}`);

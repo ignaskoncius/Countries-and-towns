@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
-    city: {
+    cityOrCountry: {
       type: String,
       required: true,
     },
@@ -13,10 +13,10 @@ const postSchema = new Schema(
       required: true,
     },
     population: {
-      type: Number,
+      type: String,
       required: true,
     },
-    countryOrCity: {
+    selectItem: {
       type: String,
       required: true,
     },
