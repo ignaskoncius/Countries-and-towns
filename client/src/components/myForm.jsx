@@ -6,16 +6,20 @@ class MyForm extends Component {
     cityOrCountry: '',
     continent: '',
     population: '',
+    selectItem: 'city',
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     console.log(event);
     const objToSend = {
       cityOrCountry: this.state.cityOrCountry,
       continent: this.state.continent,
       population: this.state.population,
+      selectItem: this.state.selectItem,
     };
+    const ats = await axios.post('http://localhost:4000/addNewPlace', objToSend);
+    console.log(ats);
   };
 
   handleTitle = (event) => {
@@ -26,6 +30,9 @@ class MyForm extends Component {
   };
   handlePopulation = (event) => {
     this.setState({ population: event.target.value });
+  };
+  handleSelect = (event) => {
+    this.setState({ selectItem: event.target.value });
   };
 
   render() {
@@ -51,7 +58,7 @@ class MyForm extends Component {
             placeholder="Enter population"
           />
           <label htmlFor="cityCountry">Select your option</label>
-          <select name="cityCountry" id="cityCountry">
+          <select value={this.state.selectItem} onChange={this.handleSelect} name="cityCountry" id="cityCountry">
             <option value="city">City</option>
             <option value="country">Country</option>
           </select>
