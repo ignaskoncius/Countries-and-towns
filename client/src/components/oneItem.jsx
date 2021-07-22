@@ -11,7 +11,9 @@ class OneItem extends Component {
         <p>{item.population}</p>
         <p>{item.selectItem}</p>
         <button className="edit-btn">Edit</button>
-        <button className="delete-btn">Delete</button>
+        <button onClick={() => this.props.onDelete(item._id)} className="delete-btn">
+          Delete
+        </button>
       </div>
     );
   }

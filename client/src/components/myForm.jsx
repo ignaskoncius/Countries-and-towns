@@ -19,6 +19,7 @@ class MyForm extends Component {
       selectItem: this.state.selectItem,
     };
     const ats = await axios.post('http://localhost:4000/addNewPlace', objToSend);
+    this.setState({ cityOrCountry: '', continent: '', population: '', selectItem: 'City' });
     console.log(ats);
   };
 
