@@ -1,38 +1,99 @@
-.App {
+/* globals */
+* {
+  box-sizing: border-box;
+  background-color: #3aafa9;
+  color: #feffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+
+.places-info {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.places-info a {
+  text-decoration: none;
+  margin: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Form */
+
+.form-container {
+  width: 25%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #2b7a78;
+  border-radius: 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  background-color: #2b7a78;
+}
+
+.form__input {
+  background-color: #def2f1;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.form__btn {
+  background-color: #17252acc;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Items List */
+
+.items-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.items-list li {
+  width: 30%;
+}
+
+.items-list__card {
+  background-color: #2b7a78;
+  padding: 0.7rem;
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.items-list__card p {
+  background-color: #2b7a78;
+  margin: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.delete-btn {
+  background-color: #fc4445;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0.2rem 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-btn {
+  background-color: #d6ce15;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0.2rem 0;
 }
