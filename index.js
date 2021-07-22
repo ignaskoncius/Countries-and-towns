@@ -28,9 +28,11 @@ app.use(cors());
 // routes
 const allPosts = require('./server/routes/allPosts');
 const newPost = require('./server/routes/newPost');
+const deleteItem = require('./server/routes/deleteItem');
 
 app.use('/', allPosts);
 app.use('/', newPost);
+app.use('/', deleteItem);
 
 app.get('/', (req, res) => {
   res.status(200).json(`Serveris veikia an port ${PORT}`);

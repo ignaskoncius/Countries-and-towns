@@ -13,7 +13,7 @@ const postSchema = new Schema(
       required: true,
     },
     population: {
-      type: String,
+      type: Number,
       required: true,
     },
     selectItem: {
