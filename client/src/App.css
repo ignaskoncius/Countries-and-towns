@@ -17,7 +17,10 @@
   margin-bottom: 2rem;
 }
 
-.places-info a {
+.places-info a,
+button {
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   margin: 0 1rem;
 }

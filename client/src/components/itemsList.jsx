@@ -5,13 +5,18 @@ class ItemsList extends Component {
   state = {};
   render() {
     return (
-      <ul className="items-list">
-        {this.props.allData.map((item) => (
-          <li>
-            <OneItem key={item._id} item={item}></OneItem>
-          </li>
-        ))}
-      </ul>
+      <div>
+        {/* <button onClick={() => this.props.onGetCitiesCountries('')}>All places</button>
+        <button onClick={() => this.props.onGetCitiesCountries('City')}>All cities</button>
+        <button onClick={() => this.props.onGetCitiesCountries('Country')}>Countries</button> */}
+        <ul className="items-list">
+          {this.props.allData.map((item) => (
+            <li key={item._id}>
+              <OneItem item={item}></OneItem>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }

@@ -8,9 +8,15 @@ class NavBar extends Component {
       <div className="places-info">
         <h2>Choose what you want to see</h2>
         <Link to="/form">Add new place</Link>
-        <Link to="/allPosts">All places</Link>
-        <Link to="/cities">Cities</Link>
-        <Link to="/countries">Countries</Link>
+        <Link to="/" onClick={() => this.props.onGetCitiesCountries('')}>
+          All places
+        </Link>
+        <Link to="/" onClick={() => this.props.onGetCitiesCountries('City')}>
+          All cities
+        </Link>
+        <Link to="/" onClick={() => this.props.onGetCitiesCountries('Country')}>
+          Countries
+        </Link>
       </div>
     );
   }

@@ -6,7 +6,7 @@ class MyForm extends Component {
     cityOrCountry: '',
     continent: '',
     population: '',
-    selectItem: 'city',
+    selectItem: 'City',
   };
 
   handleSubmit = async (event) => {
@@ -61,8 +61,8 @@ class MyForm extends Component {
             name="selectItem"
             id="cityCountry"
           >
-            <option value="city">City</option>
-            <option value="country">Country</option>
+            <option value="City">City</option>
+            <option value="Country">Country</option>
           </select>
           <button className="form__btn" type="submit">
             Submit your form
