@@ -22,17 +22,8 @@ class MyForm extends Component {
     console.log(ats);
   };
 
-  handleTitle = (event) => {
-    this.setState({ cityOrCountry: event.target.value });
-  };
-  handleContinent = (event) => {
-    this.setState({ continent: event.target.value });
-  };
-  handlePopulation = (event) => {
-    this.setState({ population: event.target.value });
-  };
-  handleSelect = (event) => {
-    this.setState({ selectItem: event.target.value });
+  handleInput = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
@@ -40,25 +31,28 @@ class MyForm extends Component {
       <div className="my-form">
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <input
-            value={this.state.title}
-            onChange={this.handleTitle}
+            name="cityOrCountry"
+            value={this.state.cityOrCountry}
+            onChange={this.handleInput}
             type="text"
             placeholder="Enter city or country name"
           />
           <input
+            name="continent"
             value={this.state.continent}
-            onChange={this.handleContinent}
+            onChange={this.handleInput}
             type="text"
             placeholder="Enter continent"
           />
           <input
+            name="population"
             value={this.state.population}
-            onChange={this.handlePopulation}
+            onChange={this.handleInput}
             type="text"
             placeholder="Enter population"
           />
           <label htmlFor="cityCountry">Select your option</label>
-          <select value={this.state.selectItem} onChange={this.handleSelect} name="cityCountry" id="cityCountry">
+          <select value={this.state.selectItem} onChange={this.handleInput} name="selectItem" id="cityCountry">
             <option value="city">City</option>
             <option value="country">Country</option>
           </select>
