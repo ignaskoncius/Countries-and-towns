@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
+import OneItem from './oneItem';
 
 class CountriesList extends Component {
   state = {};
   render() {
     return (
-      <div className="items-list">
-        <ul>
-          {this.props.allData.map((item) =>
-            item.selectItem === 'Country' ? (
-              <div key={item._id}>
-                <li>
-                  <p>{item.cityOrCountry}</p>
-                  <p>{item.continent}</p>
-                  <p>{item.population}</p>
-                  <p>{item.selectItem}</p>
-                </li>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            ) : null
-          )}
-        </ul>
-      </div>
+      <ul className="items-list">
+        {this.props.allData.map((item) =>
+          item.selectItem === 'Country' ? (
+            <li>
+              <OneItem key={item._id} item={item}></OneItem>
+            </li>
+          ) : null
+        )}
+      </ul>
     );
   }
 }
