@@ -28,9 +28,10 @@ class MyForm extends Component {
 
   render() {
     return (
-      <div className="my-form">
-        <form onSubmit={this.handleSubmit} autoComplete="off">
+      <div className="form-container">
+        <form className="form-container-main" onSubmit={this.handleSubmit} autoComplete="off">
           <input
+            className="form__input"
             name="cityOrCountry"
             value={this.state.cityOrCountry}
             onChange={this.handleInput}
@@ -38,6 +39,7 @@ class MyForm extends Component {
             placeholder="Enter city or country name"
           />
           <input
+            className="form__input"
             name="continent"
             value={this.state.continent}
             onChange={this.handleInput}
@@ -45,18 +47,26 @@ class MyForm extends Component {
             placeholder="Enter continent"
           />
           <input
+            className="form__input"
             name="population"
             value={this.state.population}
             onChange={this.handleInput}
             type="text"
             placeholder="Enter population"
           />
-          <label htmlFor="cityCountry">Select your option</label>
-          <select value={this.state.selectItem} onChange={this.handleInput} name="selectItem" id="cityCountry">
+          <select
+            className="form__input"
+            value={this.state.selectItem}
+            onChange={this.handleInput}
+            name="selectItem"
+            id="cityCountry"
+          >
             <option value="city">City</option>
             <option value="country">Country</option>
           </select>
-          <button type="submit">Submit your form</button>
+          <button className="form__btn" type="submit">
+            Submit your form
+          </button>
         </form>
       </div>
     );
